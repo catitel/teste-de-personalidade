@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando...</title>
+    <style>
+        /* Estilos básicos para a página */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .loading {
+            color: #f39c12;
+        }
+        .result {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button id="startButton">Clique para calcular</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Exibe a mensagem de carregamento
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = "Carregando...";
+            messageDiv.classList.add('loading');
+
+            // Após 3 segundos, altera a mensagem
+            setTimeout(function() {
+                messageDiv.textContent = "Depois de muitos cálculos descobrimos que você é gay!";
+                messageDiv.classList.remove('loading');
+                messageDiv.classList.add('result');
+            }, 3000); // 3000ms = 3 segundos
+        });
+    </script>
+
+</body>
+</html>
